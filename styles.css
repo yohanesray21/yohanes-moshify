@@ -2,7 +2,7 @@
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
   --color-accent: #ff3400;
-  --color-heading: #1b0760;
+  --color-headings: #1b0760;
   --color-body: #918ca4;
   --color-border: #ccc;
   --border-radius: 30px;
@@ -14,27 +14,28 @@
   box-sizing: border-box;
 }
 
-/* Typhography */
+/* Typography */
+
 html {
-  /* 62.5 of 16px = 10px */
+  /* 62.5% of 16px = 10px */
   font-size: 62.5%;
 }
 
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
-  color: var(--color-body);
+  font-size: 2.4rem;
   line-height: 1.5;
+  color: var(--color-body);
 }
 
 h1,
 h2,
 h3 {
-  color: var(--color-heading);
+  color: var(--color-headings);
   margin-bottom: 1rem;
 }
 
 h1 {
-  /* 1 x font size of the html element */
   font-size: 7rem;
 }
 
@@ -52,7 +53,7 @@ p {
 
 @media screen and (min-width: 1024px) {
   body {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   h1 {
@@ -95,7 +96,6 @@ a {
     font-size: 1.5rem;
   }
 }
-
 /* Badges */
 
 .badge {
@@ -120,21 +120,20 @@ a {
   font-size: 1.6rem;
 }
 
-@media screen and (min-width: 1024) {
+@media screen and (min-width: 1024px) {
   .badge {
     font-size: 1.5rem;
   }
+
   .badge--small {
     font-size: 1.2rem;
   }
 }
-
 /* Lists */
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color-heading);
-  font-size: bold;
+  color: var(--color-headings);
 }
 
 .list--inline .list__item {
@@ -157,8 +156,7 @@ a {
     padding-left: 0;
   }
 }
-
-/* icons */
+/* Icons */
 .icon {
   width: 40px;
   height: 40px;
@@ -169,7 +167,7 @@ a {
 }
 
 .icon-container {
-  background: #f3f6fe;
+  background: #f3f9fa;
   width: 64px;
   height: 64px;
   border-radius: 100%;
@@ -177,8 +175,7 @@ a {
   justify-content: center;
   align-items: center;
 }
-
-/* Buttom */
+/* Buttons */
 .btn {
   border-radius: 40px;
   border: 0;
@@ -207,7 +204,7 @@ a {
 }
 
 .btn--secondary:hover {
-  background: #00c8eb;
+  background: #05cdf0;
 }
 
 .btn--accent {
@@ -219,20 +216,20 @@ a {
   background: #ec3000;
 }
 
+.btn--outline {
+  background: #fff;
+  color: var(--color-headings);
+  border: 2px solid var(--color-headings);
+}
+
+.btn--outline:hover {
+  background: var(--color-headings);
+  color: #fff;
+}
+
 .btn--block {
   width: 100%;
   display: inline-block;
-}
-
-.btn--outline {
-  background: #fff;
-  color: var(--color-heading);
-  border: 2px solid var(--color-heading);
-}
-
-.btn:hover {
-  background: var(--color-heading);
-  color: #fff;
 }
 
 @media screen and (min-width: 1024px) {
@@ -245,14 +242,14 @@ a {
 .input {
   border-radius: var(--border-radius);
   border: 1px solid var(--color-border);
-  color: var(--color-heading);
+  color: var(--color-headings);
   font-size: 2rem;
   outline: 0;
   padding: 1.5rem 3.5rem;
 }
 
 ::placeholder {
-  color: #cdcbc7;
+  color: #cdcbd7;
 }
 
 .input-group {
@@ -264,7 +261,7 @@ a {
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
 }
 
 .input-group .btn {
@@ -275,4 +272,25 @@ a {
   .input {
     font-size: 1.5rem;
   }
+}
+/* Cards */
+.card {
+  border-radius: 7px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+  overflow: hidden;
+}
+
+.card__header,
+.card__body {
+  padding: 2rem 3rem;
+}
+
+.card--primary .card__header {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.card--secondary .card__header {
+  background: var(--color-secondary);
+  color: #fff;
 }
